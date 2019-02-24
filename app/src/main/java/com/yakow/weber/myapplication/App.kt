@@ -3,6 +3,7 @@ package com.yakow.weber.myapplication
 import android.app.Application
 import com.yakow.weber.myapplication.toothpick.DI
 import com.yakow.weber.myapplication.toothpick.module.AppModule
+import com.yakow.weber.myapplication.toothpick.module.NetworkModule
 import timber.log.Timber
 import toothpick.Toothpick
 import toothpick.configuration.Configuration
@@ -24,7 +25,11 @@ class App : Application() {
     }
 
     private fun initScope() {
-        Toothpick.openScope(DI.APP_SCOPE).installModules(AppModule(this))
+        val appScope = Toothpick.openScope(DI.APP_SCOPE)
+        appScope.installModules(AppModule(this))
+
+        val networkScope = Toothpick.openScopes(DI.APP_SCOPE, DI.NETWORK_SCOPE)
+        networkScope.installModules(NetworkModule(""))
     }
 
     private fun initToothpick() {
