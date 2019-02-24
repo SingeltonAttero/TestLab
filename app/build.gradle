@@ -22,7 +22,7 @@ android {
 
         javaCompileOptions {
             annotationProcessorOptions {
-                arguments = [toothpick_registry_package_name: 'com.balticitc.myportfolio.codetestlab']
+                arguments = [toothpick_registry_package_name: 'com.yakow.weber.myapplication']
             }
         }
     }
