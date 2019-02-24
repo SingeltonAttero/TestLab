@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--margin and padding-->
+    <dimen name="margin_top_standard">16dp</dimen>
+    <dimen name="start_margin_standard">24dp</dimen>
+    <dimen name="end_margin_standard">16dp</dimen>
+    <dimen name="font_size_standard">16sp</dimen>
+    <dimen name="small_margin">8dp</dimen>
+    <dimen name="medium_margin">32dp</dimen>
+
+    <!--font size-->
+    <dimen name="small_font_size">14sp</dimen>
+    <dimen name="medium_font_size">16sp</dimen>
+    <dimen name="big_font_size">20sp</dimen>
+</resources>

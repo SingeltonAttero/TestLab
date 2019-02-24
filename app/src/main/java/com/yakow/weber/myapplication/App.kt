@@ -12,8 +12,7 @@ import toothpick.registries.MemberInjectorRegistryLocator
 
 /**
  * Created on 24.02.19
- * @author YWeber
- * project CodeTestLab */
+ * @author YWeber */
 
 class App : Application() {
 
@@ -29,7 +28,7 @@ class App : Application() {
         appScope.installModules(AppModule(this))
 
         val networkScope = Toothpick.openScopes(DI.APP_SCOPE, DI.NETWORK_SCOPE)
-        networkScope.installModules(NetworkModule(""))
+        networkScope.installModules(NetworkModule(BuildConfig.ServerEndpoint))
     }
 
     private fun initToothpick() {

@@ -29,8 +29,13 @@ android {
     buildTypes {
         release {
             minifyEnabled false
+            buildConfigField "String", "ServerEndpoint", releaseEndpoint
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+        debug{
+            buildConfigField "String", "ServerEndpoint", debugEndpoint
+        }
+
     }
 }
 
