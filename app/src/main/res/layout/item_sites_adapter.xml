@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/medium_font_size"
+    android:layout_marginEnd="@dimen/medium_font_size"
+    android:layout_marginBottom="@dimen/small_margin"
+    app:cardCornerRadius="@dimen/small_margin">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/nameView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/small_margin"
+            android:layout_marginEnd="@dimen/small_margin"
+            android:textColor="@color/primaryText"
+            android:textSize="@dimen/big_font_size"
+            tools:text="Названия ресурса" />
+
+
+        <TextView
+            android:id="@+id/descriptionView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/small_margin"
+            android:layout_marginEnd="@dimen/small_margin"
+            android:layout_marginTop="@dimen/small_margin"
+            android:textColor="@color/secondaryText"
+            android:textSize="@dimen/medium_font_size"
+            tools:text="Описания" />
+
+        <TextView
+            android:id="@+id/siteView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/small_margin"
+            android:autoLink="web"
+            android:textSize="@dimen/small_font_size"
+            tools:text="Ссылка" />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

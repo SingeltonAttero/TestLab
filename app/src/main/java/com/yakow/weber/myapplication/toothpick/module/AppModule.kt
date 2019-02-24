@@ -12,8 +12,7 @@ import toothpick.config.Module
 
 /**
  * Created on 05.02.19
- * @author YWeber
- * project totdesigner */
+ * @author YWeber */
 
 class AppModule (context: Context) : Module() {
     init {

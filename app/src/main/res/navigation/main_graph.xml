@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/main_graph">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/sitesFragment">
 
+    <fragment
+        android:id="@+id/sitesFragment"
+        android:name="com.yakow.weber.myapplication.ui.sites.SitesFragment"
+        android:label="SitesFragment"
+        tools:layout="@layout/fragment_sites" />
 </navigation>

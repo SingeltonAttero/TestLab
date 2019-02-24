@@ -31,6 +31,6 @@ class MainActivity : MvpAppCompatActivity(), MainView {
     }
 
     override fun showToastError(message: String) {
-        toast(message)
+        toast(message).show()
     }
 }

@@ -2,6 +2,7 @@ package com.yakow.weber.myapplication.toothpick.provider
 
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import com.yakow.weber.myapplication.model.data.server.Api
+import com.yakow.weber.myapplication.toothpick.qualifier.ServerPath
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -15,8 +16,8 @@ import javax.inject.Provider
  * @author YWeber */
 
 class ApiProvider @Inject constructor(
-    private val httpClient: OkHttpClient,
-    private val serverPath: String
+        private val httpClient: OkHttpClient,
+        @ServerPath private val serverPath: String
 ) : Provider<Api> {
     override fun get(): Api = with(Retrofit.Builder()) {
         Timber.d("Creating api")
