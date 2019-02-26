@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/jokesFragment"
+        android:title="@string/jokes"
+        android:icon="@drawable/icon_jokes"
+        />
+
+    <item
+        android:id="@+id/sitesFragment"
+        android:title="@string/source"
+        android:icon="@drawable/icon_sites"
+        />
+
+    <item
+        android:id="@+id/aboutFragment"
+        android:title="@string/about"
+        android:icon="@drawable/icon_source_about"
+        />
+
+</menu>
