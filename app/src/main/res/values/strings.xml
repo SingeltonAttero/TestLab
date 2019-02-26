@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">CodeTestLab</string>
+    <string name="app_name">KODE test app</string>
+    <string name="bad_request_error">Сервер не может обработать запрос</string>
+    <string name="not_found_error">Не найдено</string>
+    <string name="server_error_error">Произошла ошибка</string>
+    <string name="unknown_error">Случилась ошибка, повторите позднее</string>
+    <string name="network_error">Проверьте соединение с интернетом</string>
+    <string name="source">Источники</string>
+    <string name="jokes">Шутки</string>
+    <string name="about">О программе</string>
 </resources>

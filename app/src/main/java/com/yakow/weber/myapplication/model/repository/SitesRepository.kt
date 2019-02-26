@@ -19,7 +19,6 @@ class SitesRepository @Inject constructor(private val api: Api,
                 listResponse.reduce { acc, list -> acc.plus(list) }
                         .map { JokeSites.convertResponseToEntity(it) }
             }
-            .delay(25,TimeUnit.SECONDS)
             .subscribeOn(schedulers.io())
             .observeOn(schedulers.ui())
 
