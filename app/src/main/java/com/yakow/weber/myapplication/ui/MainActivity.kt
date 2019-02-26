@@ -8,6 +8,7 @@ import com.yakow.weber.myapplication.presenter.MainPresenter
 import com.yakow.weber.myapplication.presenter.MainView
 import com.yakow.weber.myapplication.toothpick.DI
 import com.yakow.weber.myapplication.toothpick.system.androidx.MvpAppCompatActivity
+import kotlinx.android.synthetic.main.toolbar.*
 import org.jetbrains.anko.toast
 import toothpick.Toothpick
 
@@ -28,6 +29,7 @@ class MainActivity : MvpAppCompatActivity(), MainView {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        setSupportActionBar(toolbar)
     }
 
     override fun showToastError(message: String) {
