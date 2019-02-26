@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="128dp"
+    android:layout_marginStart="@dimen/medium_font_size"
+    android:layout_marginEnd="@dimen/medium_font_size"
+    android:layout_marginBottom="@dimen/small_margin"
+    app:cardCornerRadius="@dimen/small_margin">
+
+    <TextView
+        android:id="@+id/jokesContentView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/small_margin"
+        android:gravity="start|center"
+        android:textColor="@color/primaryText"
+        android:textSize="@dimen/big_font_size"
+        tools:text="Шутка, история, анекдот" />
+
+</androidx.cardview.widget.CardView>
