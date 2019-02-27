@@ -1,5 +1,6 @@
 package com.yakow.weber.myapplication.presenter.jokes
 
+import androidx.paging.PagedList
 import com.arellomobile.mvp.MvpView
 import com.arellomobile.mvp.viewstate.strategy.AddToEndSingleStrategy
 import com.arellomobile.mvp.viewstate.strategy.StateStrategyType
@@ -11,5 +12,5 @@ import com.yakow.weber.myapplication.entity.Joke
 @StateStrategyType(AddToEndSingleStrategy::class)
 interface JokesView : MvpView {
     fun showProgress(visible: Boolean = true)
-    fun bindJokes(listJoke: List<Joke>)
+    fun bindJokes(jokesPagedList: PagedList<Joke>)
 }
