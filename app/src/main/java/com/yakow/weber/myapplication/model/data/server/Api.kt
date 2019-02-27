@@ -14,10 +14,7 @@ interface Api {
     @GET("api/sources")
     fun getAllDataSourceAna(): Single<List<List<JokeSitesResponse>>>
 
-    @GET("api/get")
-    fun getJokes(
-        @Query("site") site: String = "bash.im",
-        @Query("name") name: String = "bash",
-        @Query("num") num: Int = 100
+    @GET("api/random")
+    fun getJokes(@Query("num") num: Int = 200
     ): Single<List<JokeResponse>>
 }

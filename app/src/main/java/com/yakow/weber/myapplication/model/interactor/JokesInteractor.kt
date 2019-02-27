@@ -14,5 +14,5 @@ class JokesInteractor @Inject constructor(private val repository: JokesRepositor
     init {
         printConstruction()
     }
-    fun getJokes(): Single<List<Joke>> = repository.getListJoke()
+    fun getJokes(num:Int): Single<List<Joke>> = repository.getListJoke(num)
 }

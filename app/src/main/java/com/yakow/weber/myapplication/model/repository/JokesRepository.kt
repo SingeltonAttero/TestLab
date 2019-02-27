@@ -19,7 +19,7 @@ class JokesRepository @Inject constructor(
         printConstruction()
     }
 
-    fun getListJoke(): Single<List<Joke>> = api.getJokes()
+    fun getListJoke(num:Int): Single<List<Joke>> = api.getJokes(num)
         .map { it.map { jokeResponse -> Joke.convertResponseToEntity(jokeResponse) } }
         .subscribeOn(schedulers.io())
         .observeOn(schedulers.ui())
