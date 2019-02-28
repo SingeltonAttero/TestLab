@@ -1,4 +1,4 @@
-package com.yakow.weber.myapplication.ui.jokes
+package com.yakow.weber.myapplication.ui.jokes.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -14,21 +14,24 @@ import kotlinx.android.synthetic.main.item_jokes_adapter.view.*
  * Created on 27.02.19
  * @author YWeber */
 
-class JokesPagingAdapter() :
+class JokesPagingAdapter(private val itemClick: (joke: Joke) -> Unit) :
     PagedListAdapter<Joke, JokesPagingAdapter.JokesViewHolder>(DiffCallback) {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): JokesPagingAdapter.JokesViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): JokesViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_jokes_adapter, parent, false)
         return JokesViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: JokesPagingAdapter.JokesViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: JokesViewHolder, position: Int) {
         getItem(position)?.let { item -> holder.bind(item) }
+
     }
 
-    class JokesViewHolder(itemView: View) : BaseViewHolder<Joke>(itemView) {
+    inner class JokesViewHolder(itemView: View) : BaseViewHolder<Joke>(itemView) {
+
         override fun bind(item: Joke) {
             itemView.jokesContentView.text = item.content
+            itemView.setOnClickListener { itemClick(item) }
         }
     }
 

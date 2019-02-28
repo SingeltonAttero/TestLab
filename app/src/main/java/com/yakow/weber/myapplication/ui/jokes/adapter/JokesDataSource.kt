@@ -1,4 +1,4 @@
-package com.yakow.weber.myapplication.ui.jokes.source
+package com.yakow.weber.myapplication.ui.jokes.adapter
 
 import androidx.paging.PositionalDataSource
 import com.yakow.weber.myapplication.entity.Joke
@@ -17,7 +17,7 @@ class JokesDataSource(
 
     override fun loadInitial(params: LoadInitialParams, callback: LoadInitialCallback<Joke>) {
         val disposable = getJokes(params.requestedLoadSize)
-            .subscribe({ callback.onResult(it, 0) }, { Timber.e(it) })
+            .subscribe({ callback.onResult(it, params.requestedStartPosition) }, { Timber.e(it) })
         compositeDisposable.add(disposable)
     }
 

@@ -2,6 +2,8 @@ package com.yakow.weber.myapplication.ui.jokes
 
 import android.os.Bundle
 import android.view.View
+import androidx.fragment.app.FragmentActivity
+import androidx.navigation.Navigation
 import androidx.paging.PagedList
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.arellomobile.mvp.presenter.InjectPresenter
@@ -11,12 +13,12 @@ import com.yakow.weber.myapplication.entity.Joke
 import com.yakow.weber.myapplication.presenter.jokes.JokesPresenter
 import com.yakow.weber.myapplication.presenter.jokes.JokesView
 import com.yakow.weber.myapplication.toothpick.DI
-import com.yakow.weber.myapplication.toothpick.system.executor.ExecutorsProvider
+import com.yakow.weber.myapplication.toothpick.system.router.NavigatorRouter
+import com.yakow.weber.myapplication.toothpick.system.router.RouterProvider
 import com.yakow.weber.myapplication.ui.base.BaseFragment
-import com.yakow.weber.myapplication.ui.jokes.source.JokesDataSource
+import com.yakow.weber.myapplication.ui.jokes.adapter.JokesPagingAdapter
 import kotlinx.android.synthetic.main.fragment_jokes.*
 import toothpick.Toothpick
-import javax.inject.Inject
 
 /**
  * Created on 26.02.19
@@ -29,8 +31,11 @@ class JokesFragment : BaseFragment(), JokesView {
 
     @ProvidePresenter
     fun providerPresenter(): JokesPresenter = Toothpick
-            .openScope(DI.NETWORK_SCOPE)
+        .openScope(DI.NETWORK_SCOPE)
             .getInstance(JokesPresenter::class.java)
+
+    private val router:RouterProvider
+        get() = NavigatorRouter(Navigation.findNavController(context as FragmentActivity,R.id.navHostFragment))
 
     override val layoutRes: Int
         get() = R.layout.fragment_jokes
@@ -41,7 +46,7 @@ class JokesFragment : BaseFragment(), JokesView {
     }
 
     override fun bindJokes(jokesPagedList: PagedList<Joke>) {
-        val adapter = JokesPagingAdapter()
+        val adapter = JokesPagingAdapter { joke -> presenter.goToDetailed(router) }
         adapter.submitList(jokesPagedList)
         jokesRecycler.adapter = adapter
         jokesRecycler.layoutManager = LinearLayoutManager(context)

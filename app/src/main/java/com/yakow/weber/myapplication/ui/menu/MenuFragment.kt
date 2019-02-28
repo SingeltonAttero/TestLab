@@ -19,7 +19,7 @@ class MenuFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val menuNavController = Navigation.findNavController(context as FragmentActivity,R.id.nav_menu_host_fragment)
+        val menuNavController = Navigation.findNavController(context as FragmentActivity, R.id.navMenuHostFragment)
         NavigationUI.setupWithNavController(bottomNavigationView, menuNavController)
     }
 }
