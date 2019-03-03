@@ -7,14 +7,19 @@ import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import com.yakow.weber.myapplication.R
 import com.yakow.weber.myapplication.entity.Joke
+import com.yakow.weber.myapplication.extension.rxOnClickListener
+import com.yakow.weber.myapplication.extension.toSpanned
 import com.yakow.weber.myapplication.ui.base.adapter.BaseViewHolder
+import io.reactivex.disposables.CompositeDisposable
 import kotlinx.android.synthetic.main.item_jokes_adapter.view.*
 
 /**
  * Created on 27.02.19
  * @author YWeber */
 
-class JokesPagingAdapter(private val itemClick: (joke: Joke) -> Unit) :
+class JokesPagingAdapter(
+        private val disposables:CompositeDisposable,
+        private val itemClick: (joke: Joke) -> Unit) :
     PagedListAdapter<Joke, JokesPagingAdapter.JokesViewHolder>(DiffCallback) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): JokesViewHolder {
@@ -30,8 +35,8 @@ class JokesPagingAdapter(private val itemClick: (joke: Joke) -> Unit) :
     inner class JokesViewHolder(itemView: View) : BaseViewHolder<Joke>(itemView) {
 
         override fun bind(item: Joke) {
-            itemView.jokesContentView.text = item.content
-            itemView.setOnClickListener { itemClick(item) }
+            itemView.jokesContentView.text = item.content.toSpanned()
+            disposables.add(itemView.rxOnClickListener { itemClick(item) })
         }
     }
 

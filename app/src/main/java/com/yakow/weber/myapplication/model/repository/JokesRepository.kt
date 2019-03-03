@@ -18,6 +18,7 @@ class JokesRepository @Inject constructor(
     init {
         printConstruction()
     }
+    lateinit var currentJoke:Joke
 
     fun getListJoke(num:Int): Single<List<Joke>> = api.getJokes(num)
         .map { it.map { jokeResponse -> Joke.convertResponseToEntity(jokeResponse) } }

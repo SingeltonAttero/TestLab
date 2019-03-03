@@ -31,7 +31,7 @@ class JokesFragment : BaseFragment(), JokesView {
 
     @ProvidePresenter
     fun providerPresenter(): JokesPresenter = Toothpick
-        .openScope(DI.NETWORK_SCOPE)
+            .openScope(DI.MENU_SCOPE)
             .getInstance(JokesPresenter::class.java)
 
     private val router:RouterProvider
@@ -46,7 +46,7 @@ class JokesFragment : BaseFragment(), JokesView {
     }
 
     override fun bindJokes(jokesPagedList: PagedList<Joke>) {
-        val adapter = JokesPagingAdapter { joke -> presenter.goToDetailed(router) }
+        val adapter = JokesPagingAdapter(compositeDisposable) { joke -> presenter.goToDetailed(joke, router) }
         adapter.submitList(jokesPagedList)
         jokesRecycler.adapter = adapter
         jokesRecycler.layoutManager = LinearLayoutManager(context)

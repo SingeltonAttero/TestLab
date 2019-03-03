@@ -8,8 +8,8 @@ import androidx.navigation.NavOptions
  * Created on 28.02.19
  * @author YWeber */
 class NavigatorRouter(private val navigator: NavController) : RouterProvider {
-    override fun startFlow(idView: Int) {
-        navigator.navigate(idView)
+    override fun startFlow(idView: Int, bundle: Bundle?) {
+        navigator.navigate(idView, bundle)
     }
 
     override fun newRootFlow(newRootIdFragment: Int, oldRootIdFragment: Int, bundle: Bundle?) {

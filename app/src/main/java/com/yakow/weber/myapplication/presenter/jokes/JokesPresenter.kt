@@ -3,6 +3,7 @@ package com.yakow.weber.myapplication.presenter.jokes
 import androidx.paging.PagedList
 import com.arellomobile.mvp.InjectViewState
 import com.yakow.weber.myapplication.R
+import com.yakow.weber.myapplication.entity.Joke
 import com.yakow.weber.myapplication.model.interactor.JokesInteractor
 import com.yakow.weber.myapplication.presenter.base.BasePresenter
 import com.yakow.weber.myapplication.toothpick.system.executor.ExecutorsProvider
@@ -35,9 +36,9 @@ class JokesPresenter @Inject constructor(
         viewState.bindJokes(pageList)
     }
 
-    fun goToDetailed(router: RouterProvider) = router.startFlow(R.id.actionMenuFragmentToDetailedJokeFragment)
-
-    override fun onDestroy() {
-        super.onDestroy()
+    fun goToDetailed(joke:Joke,router: RouterProvider){
+        interactor.joke = joke
+        router.startFlow(R.id.actionMenuFragmentToDetailedJokeFragment)
     }
+
 }

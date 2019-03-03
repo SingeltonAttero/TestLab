@@ -9,10 +9,18 @@ import javax.inject.Inject
 /**
  * Created on 26.02.19
  * @author YWeber */
- 
+private const val DELETE_CONTENT_XKCDB = "XKCDB"
 class JokesInteractor @Inject constructor(private val repository: JokesRepository){
     init {
         printConstruction()
     }
-    fun getJokes(num:Int): Single<List<Joke>> = repository.getListJoke(num)
+
+    var joke: Joke
+        get() = repository.currentJoke
+        set(value) {
+            repository.currentJoke = value
+        }
+
+    fun getJokes(num: Int): Single<List<Joke>> = repository.getListJoke(num)
+            .map { jokes -> jokes.filter { it.description != DELETE_CONTENT_XKCDB } }
 }
