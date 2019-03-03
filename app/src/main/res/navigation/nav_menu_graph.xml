@@ -10,7 +10,11 @@
         android:name="com.yakow.weber.myapplication.ui.jokes.JokesFragment"
         android:label="JokesFragment"
         tools:layout="@layout/fragment_jokes"
+        >
+        <action android:id="@+id/actionJokesFragmentToDetailedJokeFragment"
+                app:destination="@id/detailedJokeFragment"
         />
+    </fragment>
 
     <fragment
         android:id="@+id/sitesFragment"
@@ -24,5 +28,10 @@
         android:label="AboutFragment"
         tools:layout="@layout/fragment_about"
         />
+    <fragment android:id="@+id/detailedJokeFragment"
+              android:name="com.yakow.weber.myapplication.ui.jokes.details.DetailedJokeFragment"
+              android:label="DetailedJokeFragment"
+              tools:layout="@layout/fragment_detailed_joke"
+    />
 
 </navigation>

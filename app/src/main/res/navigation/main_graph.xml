@@ -9,5 +9,13 @@
         android:name="com.yakow.weber.myapplication.ui.menu.MenuFragment"
         android:label="MenuFragment"
         tools:layout="@layout/fragment_menu"
-        />
+        >
+        <action android:id="@+id/actionMenuFragmentToDetailedJokeFragment"
+                app:destination="@id/detailedJokeFragment"/>
+    </fragment>
+    <fragment android:id="@+id/detailedJokeFragment"
+              android:name="com.yakow.weber.myapplication.ui.jokes.details.DetailedJokeFragment"
+              android:label="DetailedJokeFragment"
+              tools:layout = "@layout/fragment_detailed_joke"
+    />
 </navigation>

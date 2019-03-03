@@ -3,6 +3,8 @@ package com.yakow.weber.myapplication.toothpick.module
 import android.content.Context
 import com.yakow.weber.myapplication.model.data.storage.prefs.AppPrefs
 import com.yakow.weber.myapplication.model.data.storage.prefs.PrefsProvider
+import com.yakow.weber.myapplication.model.interactor.JokesInteractor
+import com.yakow.weber.myapplication.model.repository.JokesRepository
 import com.yakow.weber.myapplication.toothpick.system.ResourceManager
 import com.yakow.weber.myapplication.toothpick.system.executor.AppExecutors
 import com.yakow.weber.myapplication.toothpick.system.executor.ExecutorsProvider

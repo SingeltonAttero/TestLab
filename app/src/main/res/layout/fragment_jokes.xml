@@ -13,15 +13,4 @@
         tools:listitem="@layout/item_jokes_adapter"
         />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/jokesFab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        app:fabSize="auto"
-        app:elevation="@dimen/small_margin"
-        app:rippleColor="@color/secondaryText"
-        android:src="@drawable/ic_settings_fab"
-        android:layout_margin="@dimen/small_margin" />
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

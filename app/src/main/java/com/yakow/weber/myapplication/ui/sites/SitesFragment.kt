@@ -36,7 +36,7 @@ class SitesFragment : BaseFragment(), SitesView {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         toolbar?.title = getString(R.string.source)
-        adapter = SitesAdapter(mutableListOf()) { presenter.goToDetails(it) }
+        adapter = SitesAdapter(compositeDisposable, mutableListOf()) { presenter.goToDetails(it) }
         sitesRecycler.adapter = adapter
         sitesRecycler.layoutManager = LinearLayoutManager(this.activity)
     }
