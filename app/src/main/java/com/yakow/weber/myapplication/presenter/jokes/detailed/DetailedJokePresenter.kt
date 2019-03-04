@@ -1,6 +1,7 @@
 package com.yakow.weber.myapplication.presenter.jokes.detailed
 
 import com.arellomobile.mvp.InjectViewState
+import com.yakow.weber.myapplication.entity.Joke
 import com.yakow.weber.myapplication.extension.printConstruction
 import com.yakow.weber.myapplication.model.interactor.JokesInteractor
 import com.yakow.weber.myapplication.presenter.base.BasePresenter
@@ -15,6 +16,8 @@ class DetailedJokePresenter @Inject constructor(private val interactor: JokesInt
     init {
         printConstruction()
     }
+    val joke: Joke
+        get() = interactor.joke
 
     override fun onFirstViewAttach() {
         super.onFirstViewAttach()

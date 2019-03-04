@@ -12,4 +12,8 @@
         <item name="android:windowBackground">@android:color/transparent</item>
     </style>
 
+    <style name="SaveDatabaseDialogTheme" parent="ThemeOverlay.AppCompat.Dialog">
+        <item name="android:windowBackground">@color/icons</item>
+    </style>
+
 </resources>

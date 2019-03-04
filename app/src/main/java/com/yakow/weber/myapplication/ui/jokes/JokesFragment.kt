@@ -37,20 +37,23 @@ class JokesFragment : BaseFragment(), JokesView {
     private val router:RouterProvider
         get() = NavigatorRouter(Navigation.findNavController(context as FragmentActivity,R.id.navHostFragment))
 
+    lateinit var adapter: JokesPagingAdapter
+
     override val layoutRes: Int
         get() = R.layout.fragment_jokes
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         toolbar?.title = getString(R.string.jokes)
-    }
-
-    override fun bindJokes(jokesPagedList: PagedList<Joke>) {
-        val adapter = JokesPagingAdapter(compositeDisposable) { joke -> presenter.goToDetailed(joke, router) }
-        adapter.submitList(jokesPagedList)
+        adapter = JokesPagingAdapter(compositeDisposable) { joke -> presenter.goToDetailed(joke, router) }
         jokesRecycler.adapter = adapter
         jokesRecycler.layoutManager = LinearLayoutManager(context)
     }
+
+    override fun bindJokes(jokesPagedList: PagedList<Joke>) {
+        adapter.submitList(jokesPagedList)
+    }
+
 
     override fun showProgress(visible: Boolean) {
         showDialog(visible)

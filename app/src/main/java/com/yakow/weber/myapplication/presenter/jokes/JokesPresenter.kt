@@ -1,6 +1,5 @@
 package com.yakow.weber.myapplication.presenter.jokes
 
-import androidx.paging.PagedList
 import com.arellomobile.mvp.InjectViewState
 import com.yakow.weber.myapplication.R
 import com.yakow.weber.myapplication.entity.Joke
@@ -23,22 +22,13 @@ class JokesPresenter @Inject constructor(
 
     override fun onFirstViewAttach() {
         super.onFirstViewAttach()
-        val config = PagedList.Config.Builder()
-            .setEnablePlaceholders(false)
-            .setPageSize(40)
-            .build()
         Timber.e("test test")
-        val jokesDataSource = JokesDataSource(compositeDisposable) { num: Int -> interactor.getJokes(num) }
-        val pageList = PagedList.Builder(jokesDataSource, config)
-            .setFetchExecutor(executors.newSingleThreadExecutor())
-            .setNotifyExecutor(executors.mainThreadExecutor())
-            .build()
-        viewState.bindJokes(pageList)
+        val jokesDataSource = JokesDataSource(compositeDisposable, executors) { num: Int -> interactor.getJokes(num) }
+        viewState.bindJokes(jokesPagedList = jokesDataSource.getPagedList())
     }
 
     fun goToDetailed(joke:Joke,router: RouterProvider){
         interactor.joke = joke
         router.startFlow(R.id.actionMenuFragmentToDetailedJokeFragment)
     }
-
 }

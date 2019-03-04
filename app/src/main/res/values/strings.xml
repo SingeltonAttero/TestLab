@@ -9,4 +9,8 @@
     <string name="jokes">Шутки</string>
     <string name="about">О программе</string>
     <string name="share">Поделиться</string>
+    <string name="save_joke_from_bd">Сохранить шутку на телефон</string>
+    <string name="save_db">Сохранить</string>
+    <string name="cancel_saved">Отмена</string>
+    <string name="this_joke_available_favorits">Эта шутка будет доступна в избранном</string>
 </resources>
