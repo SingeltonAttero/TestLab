@@ -31,6 +31,9 @@ import toothpick.Toothpick
  * @author YWeber */
 
 class DetailedJokeFragment : BaseFragment(), DetailedJokeView {
+    companion object {
+        private const val DIALOG_SAVE = "dialog save db"
+    }
 
     @InjectPresenter
     lateinit var presenter: DetailedJokePresenter
@@ -57,7 +60,7 @@ class DetailedJokeFragment : BaseFragment(), DetailedJokeView {
                     is Select.Positive -> toast("positive")
                     is Select.Negative -> toast("negative")
                 }
-            }.show(childFragmentManager, "Dialog")
+            }.show(childFragmentManager, DIALOG_SAVE)
         }.bind()
 
     }

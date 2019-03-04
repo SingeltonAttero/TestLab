@@ -6,6 +6,7 @@ import androidx.fragment.app.FragmentActivity
 import androidx.navigation.Navigation
 import androidx.paging.PagedList
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.ProvidePresenter
 import com.yakow.weber.myapplication.R
@@ -24,7 +25,10 @@ import toothpick.Toothpick
  * Created on 26.02.19
  * @author YWeber */
 
-class JokesFragment : BaseFragment(), JokesView {
+class JokesFragment : BaseFragment(), JokesView, SwipeRefreshLayout.OnRefreshListener {
+    override fun onRefresh() {
+        presenter.loadJokes()
+    }
 
     @InjectPresenter
     lateinit var presenter: JokesPresenter
@@ -48,14 +52,14 @@ class JokesFragment : BaseFragment(), JokesView {
         adapter = JokesPagingAdapter(compositeDisposable) { joke -> presenter.goToDetailed(joke, router) }
         jokesRecycler.adapter = adapter
         jokesRecycler.layoutManager = LinearLayoutManager(context)
+        jokesSwipeRefresh.setOnRefreshListener(this)
     }
 
     override fun bindJokes(jokesPagedList: PagedList<Joke>) {
         adapter.submitList(jokesPagedList)
     }
 
-
     override fun showProgress(visible: Boolean) {
-        showDialog(visible)
+        jokesSwipeRefresh.isRefreshing = visible
     }
 }
