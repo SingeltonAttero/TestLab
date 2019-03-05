@@ -3,6 +3,7 @@ package com.yakow.weber.myapplication.model.interactor
 import com.yakow.weber.myapplication.entity.Joke
 import com.yakow.weber.myapplication.extension.printConstruction
 import com.yakow.weber.myapplication.model.repository.JokesRepository
+import io.reactivex.Completable
 import io.reactivex.Single
 import javax.inject.Inject
 
@@ -20,6 +21,8 @@ class JokesInteractor @Inject constructor(private val repository: JokesRepositor
         set(value) {
             repository.currentJoke = value
         }
+
+    fun saveJoke(): Completable = repository.saveJokeFromDb(repository.currentJoke)
 
     fun getJokes(num: Int): Single<List<Joke>> = repository.getListJoke(num)
             .map { jokes -> jokes.filter { it.description != DELETE_CONTENT_XKCDB } }
