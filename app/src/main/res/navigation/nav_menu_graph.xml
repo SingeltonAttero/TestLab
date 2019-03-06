@@ -33,5 +33,11 @@
               android:label="DetailedJokeFragment"
               tools:layout="@layout/fragment_detailed_joke"
     />
+    <fragment
+        android:id="@+id/tabsFragment"
+        android:name="com.yakow.weber.myapplication.ui.tabs.TabsFragment"
+        android:label="TabsFragment"
+        tools:layout="@layout/fragment_tabs"
+        />
 
 </navigation>
