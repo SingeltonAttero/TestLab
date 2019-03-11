@@ -8,7 +8,7 @@
         />
 
     <item
-        android:id="@+id/sitesFragment"
+        android:id="@+id/tabsFragment"
         android:title="@string/source"
         android:icon="@drawable/icon_sites"
         />

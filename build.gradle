@@ -9,7 +9,7 @@ buildscript {
     ext.timberVersion = '4.7.1'
     ext.anko_version = '0.10.7'
     ext.glideVersion = "4.8.0"
-    ext.room = "1.1.1"
+    ext.roomVersion = '1.1.1'
     ext.junit = "4.12"
     ext.rxjava = "2.2.0"
     ext.rxandroid = "2.0.2"

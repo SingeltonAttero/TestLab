@@ -57,8 +57,7 @@ class DetailedJokeFragment : BaseFragment(), DetailedJokeView {
         jokesFab.rxOnClickListener {
             SaveDatabaseDialog.newInstance {
                 when (it) {
-                    is Select.Positive -> toast("positive")
-                    is Select.Negative -> toast("negative")
+                    is Select.Positive -> presenter.saveJoke()
                 }
             }.show(childFragmentManager, DIALOG_SAVE)
         }.bind()
