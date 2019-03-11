@@ -1,6 +1,7 @@
 package com.yakow.weber.myapplication.presenter.jokes.detailed
 
 import com.arellomobile.mvp.InjectViewState
+import com.yakow.weber.myapplication.R
 import com.yakow.weber.myapplication.entity.Joke
 import com.yakow.weber.myapplication.extension.printConstruction
 import com.yakow.weber.myapplication.extension.userMessage
@@ -35,7 +36,7 @@ class DetailedJokePresenter @Inject constructor(
     fun saveJoke() {
         interactor.saveJoke()
             .subscribe({
-                systemMessage.systemMessage("История сохранена")
+                systemMessage.systemMessage(resourceManager.getString(R.string.save_history))
             }, {
                 systemMessage.systemMessage(it.userMessage(resourceManager))
                 Timber.e(it)

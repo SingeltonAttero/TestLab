@@ -13,4 +13,6 @@
     <string name="save_db">Сохранить</string>
     <string name="cancel_saved">Отмена</string>
     <string name="this_joke_available_favorits">Эта шутка будет доступна в избранном</string>
+    <string name="save_history">История сохранена</string>
+    <string name="favorites">Избранное</string>
 </resources>
