@@ -40,7 +40,6 @@ abstract class BaseFragment : MvpAppCompatFragment(), ComponentDisposablesProvid
             childFragmentManager.executePendingTransactions()
         }
     }
-
     override fun onDestroy() {
         clear()
         super.onDestroy()
