@@ -31,7 +31,6 @@ fun <T> Observable<T>.subscribeBy(
         onError: (Throwable) -> Unit = { Timber.e(it) }
 ): Disposable = subscribe(onNext, onError)
 
-
 fun ViewGroup.inflate(@LayoutRes layoutId: Int, attachToRoot: Boolean = false): View =
     LayoutInflater.from(context).inflate(layoutId, this, attachToRoot)
 

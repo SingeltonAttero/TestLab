@@ -3,13 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/favoritesRecycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="test favorites fragment"
-        android:gravity="center"
-        android:textSize="24sp"
         />
-
 
 </FrameLayout>

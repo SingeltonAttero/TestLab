@@ -3,8 +3,7 @@ package com.yakow.weber.myapplication.ui.tabs.pager
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
-import com.yakow.weber.myapplication.toothpick.favorites.FavoritesFragment
-import com.yakow.weber.myapplication.ui.about.AboutFragment
+import com.yakow.weber.myapplication.ui.favorites.FavoritesFragment
 import com.yakow.weber.myapplication.ui.sites.SitesFragment
 
 /**

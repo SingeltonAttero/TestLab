@@ -92,6 +92,9 @@ dependencies {
     implementation "android.arch.persistence.room:runtime:$roomVersion"
     implementation "android.arch.persistence.room:rxjava2:$roomVersion"
     kapt "android.arch.persistence.room:compiler:$roomVersion"
+    // time lib
+    implementation 'net.danlew:android.joda:2.9.9'
+    testImplementation "joda-time:joda-time:2.9.9"
     //test
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.2-alpha01'

@@ -12,7 +12,7 @@ import io.reactivex.Single
 @Dao
 abstract class JokesDao : ContractDao<Long, JokeEntity> {
     @Query("SELECT * FROM table_joke")
-    abstract fun getAll(): Flowable<List<JokeEntity>>
+    abstract fun getAll(): Single<List<JokeEntity>>
 
     @Query("SELECT * FROM table_joke WHERE id = :key")
     abstract fun getByKey(key: Long): Single<JokeEntity>

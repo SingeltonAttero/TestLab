@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/medium_font_size"
+    android:layout_marginEnd="@dimen/medium_font_size"
+    android:layout_marginBottom="@dimen/small_margin"
+    android:layout_marginTop="@dimen/small_margin"
+    app:cardCornerRadius="@dimen/small_margin">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/saveTypeContentView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/small_margin"
+            android:layout_marginEnd="@dimen/small_margin"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/big_font_size"
+            tools:text="Новая история" />
+
+
+        <TextView
+            android:id="@+id/saveContentView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/small_margin"
+            android:layout_marginTop="@dimen/small_margin"
+            android:layout_marginEnd="@dimen/small_margin"
+            android:textColor="@color/primaryText"
+            android:textSize="@dimen/medium_font_size"
+            tools:text="Шутка, история, анекдот" />
+
+        <TextView
+
+            android:id="@+id/saveDateView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/small_margin"
+            android:textColor="@color/secondaryText"
+            android:textSize="@dimen/small_font_size"
+            tools:text="13/12/2018" />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

@@ -11,5 +11,6 @@ import androidx.room.PrimaryKey
 class JokeEntity(
     @PrimaryKey(autoGenerate = true) val id: Long = 0,
     val content: String,
-    val sourceJoke: String
+    val sourceJoke: String,
+    val saveDate:String
 )
